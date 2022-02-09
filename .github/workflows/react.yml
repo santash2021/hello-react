@@ -1,7 +1,4 @@
-<<<<<<< HEAD
 
-=======
->>>>>>> 1a75ccd9e3db7d47563c28fd1556807471f9bc05
 name: React CICD
 
 on:
@@ -25,10 +22,9 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - run: npm i
-<<<<<<< HEAD
+
     - run: npm run build
     
 
-=======
-    - run: npm run build 
->>>>>>> 1a75ccd9e3db7d47563c28fd1556807471f9bc05
+
+

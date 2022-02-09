@@ -23,7 +23,7 @@ jobs:
                 cd /tmp
                 ls -a
              host: ${{ secrets.SSH_HOST }}
-             user: root
+             user: ubuntu
              key: ${{ secrets.SSH_PRIVATE_KEY}}
 
 

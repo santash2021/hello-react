@@ -36,7 +36,7 @@ jobs:
       run: ssh-keyscan -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
       
     - name: Deploy with rsync
-      run: rsync -avz ./dist/ ubuntu@${{ secrets.SSH_HOST }}:/
+      run: ssh -i ${{ secrets.SSH_PRIVATE_KEY }} ubuntu@ec2-54-171-78-118.eu-west-1.compute.amazonaws.com
 
 
 

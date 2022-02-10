@@ -28,7 +28,7 @@ jobs:
              key: ${{ secrets.SSH_PRIVATE_KEY }}
              
          - name: copy file via ssh key
-           uses: appleboy/scp-action@master
+           uses: fifsky/scp-action@master
            with:
              host: ${{ secrets.SSH_HOST }}
              username: ubuntu

@@ -25,15 +25,10 @@ jobs:
       - run: npm i
       - run: npm run build 
         
-    run:
-      name: sshcopy
-        
-      runs-on: ubuntu-latest
-      steps:
       - name: Checkout repository
-      - uses: actions/checkout@v2    
+        uses: actions/checkout@v2    
       - name: Upload Files
-      - uses: siva1024/scp-deployer@latest
+        uses: siva1024/scp-deployer@latest
         with:
              host: ${{ secrets.SSH_HOST }}
              username: ubuntu

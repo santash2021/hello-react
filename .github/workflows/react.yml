@@ -34,7 +34,7 @@ jobs:
              host: ${{ secrets.SSH_HOST }}
              username: ubuntu
              key: ${{ secrets.SSH_PRIVATE_KEY }}
-             source: "build"
+             source: "dist"
              target: "~/"
              
       - run: ls

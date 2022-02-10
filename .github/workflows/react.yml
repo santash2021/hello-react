@@ -41,7 +41,7 @@ jobs:
         with:
            command: |
               ls 
-              sudo cp -r dist /
+              sudo cp -r dist/. /var/www/html
                 
            host: ${{ secrets.SSH_HOST }}
            user: ubuntu

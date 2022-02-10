@@ -15,24 +15,31 @@ jobs:
           node-version: [14.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
+
       steps:
-      - uses: actions/checkout@v2
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v2
-        with:
-           node-version: ${{ matrix.node-version }}
-      - run: npm i
-      - run: npm run build 
-#       - name: Checkout repository
-      - uses: actions/checkout@v2    
-      - name: Upload Files
-      - uses: siva1024/scp-deployer@latest
-        with:
-           host: ${{ secrets.SSH_HOST }}
-           username: ubuntu
-           key: ${{ secrets.SSH_PRIVATE_KEY }}
-           source: "README.md"
-           target: "~/"
+          - uses: actions/checkout@v2
+          - name: Use Node.js ${{ matrix.node-version }}
+            uses: actions/setup-node@v2
+            with:
+              node-version: ${{ matrix.node-version }}
+          - run: npm i
+          - run: npm run build 
+        
+    sshcopy:
+         name: sshcopy
+        
+         runs-on: ubuntu-latest
+         steps:
+         - name: Checkout repository
+         - uses: actions/checkout@v2    
+         - name: Upload Files
+         - uses: siva1024/scp-deployer@latest
+           with:
+             host: ${{ secrets.SSH_HOST }}
+             username: ubuntu
+             key: ${{ secrets.SSH_PRIVATE_KEY }}
+             source: "README.md"
+             target: "~/"
     
 
      

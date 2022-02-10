@@ -25,21 +25,21 @@ jobs:
       - run: npm i
       - run: npm run build 
         
-#     sshcopy:
-#          name: sshcopy
+    run:
+      name: sshcopy
         
-#          runs-on: ubuntu-latest
-#          steps:
-#          - name: Checkout repository
-#          - uses: actions/checkout@v2    
-#          - name: Upload Files
-#          - uses: siva1024/scp-deployer@latest
-#            with:
-#              host: ${{ secrets.SSH_HOST }}
-#              username: ubuntu
-#              key: ${{ secrets.SSH_PRIVATE_KEY }}
-#              source: "README.md"
-#              target: "~/"
+      runs-on: ubuntu-latest
+      steps:
+      - name: Checkout repository
+      - uses: actions/checkout@v2    
+      - name: Upload Files
+      - uses: siva1024/scp-deployer@latest
+        with:
+             host: ${{ secrets.SSH_HOST }}
+             username: ubuntu
+             key: ${{ secrets.SSH_PRIVATE_KEY }}
+             source: "README.md"
+             target: "~/"
     
 
      

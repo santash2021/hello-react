@@ -35,7 +35,18 @@ jobs:
              username: ubuntu
              key: ${{ secrets.SSH_PRIVATE_KEY }}
              source: "dist"
-             target: "/var/www/html"
+             target: "~/"
+      - name: ls -a via ssh
+        uses: fifsky/ssh-action@master
+        with:
+           command: |
+              cd /tmp
+              ls -a
+              sudo su
+                
+           host: ${{ secrets.SSH_HOST }}
+           user: ubuntu
+           key: ${{ secrets.SSH_PRIVATE_KEY }}
              
       - run: ls
     

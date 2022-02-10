@@ -26,8 +26,8 @@ jobs:
       - run: npm run build 
       - run: ls
         
-      - name: Checkout repository
-        uses: actions/checkout@v2    
+#       - name: Checkout repository
+#         uses: actions/checkout@v2    
       - name: Upload Files
         uses: siva1024/scp-deployer@latest
         with:

@@ -14,12 +14,15 @@ jobs:
         uses: actions/checkout@v2    
       - name: Upload Files
         uses: siva1024/scp-deployer@latest
+      
         with:
           host: ${{ secrets.SSH_HOST }}
           username: ubuntu
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           source: "."
           target: "~/"
+          
+      - run: ls
 #   build:
 
 #     runs-on: ubuntu-latest
